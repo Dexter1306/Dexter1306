@@ -1,0 +1,31 @@
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.JFrame;
+
+public class treeSample extends JFrame{
+  JTree trees;
+  
+  public treeSample(){
+    DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
+    DefaultMutableTreeNode c1 = new DefaultMutableTreeNode("C1");
+    DefaultMutableTreeNode c2 = new DefaultMutableTreeNode("c2");
+    DefaultMutableTreeNode c3 = new DefaultMutableTreeNode("C3");
+    root.add(c1);
+    root.add(c2);
+    c2.add(c3);
+    
+    trees = new JTree(root);
+    add(trees);
+    
+    this.setTitle("Tree Sample Code");
+    this.setSize(350,300);
+    this.setVisible(true);
+    System.out.print(c2.getChildCount());
+  }
+  
+  
+  public static void main(String[]Args){
+    new treeSample();
+  }
+}
+
